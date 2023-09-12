@@ -15,7 +15,6 @@ body{
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	/* background: ; */
 	font-family: sans-serif;
 	padding:2rem;
 }
@@ -23,7 +22,6 @@ body{
 	max-width: 73.5rem;
 	height: 43rem;
 	padding: 1.2rem 1.6rem;
-	/* aspect-ratio: 16 / 9; */
 	display: flex;
 	background: var(--bg-color);
 	color:var(--text-color);
@@ -68,49 +66,48 @@ body{
 	grid-area: controls;
 	justify-self: end;
 	display: flex;
+	align-items: start;
 	gap: 1rem;
 }
-
+.slider__label{
+	display: flex;
+	padding: 0.5rem;
+	margin: -0.5rem;
+}
 .slider__button {
 	--button-size:0.8rem;
 	width: var(--button-size);
 	height: var(--button-size);
-	/* box-sizing:content-box; */
+
 	appearance: none;
 	-webkit-appearance: none;
 	border-radius: 50%;
+
 	border: 0.1rem solid var(--active-color);
 	background-clip: content-box;
-	/* outline: 0.1rem solid red; */
 	background: var(--active-color);
 	transition: var(--transition200);
-	transition-property: background-color, outline-color,background-color;
+	transition-property: background-color,background-color;
 }
 .slider__button:hover{
 	cursor: pointer;
 	background-color:var(--text-color);
 	border-color: var(--text-color);
-	/* outline-color: var(--text-color); */
 }
 .slider__button:checked{
 	background-color:var(--bg-color);
-	/* outline-color:var(--active-color); */
 }
-/* .slider__image */
-:has(.slider__button:nth-child(1):checked) :is(.slider__text,.slider__image){
-	/* background-color:yellow; */
+
+:has(.slider__label:nth-child(1)> :checked) :is(.slider__text,.slider__image){
 	transform: translateX(0);
 }
-:has(.slider__button:nth-child(2):checked) :is(.slider__text, .slider__image){
-	/* background-color: red; */
+:has(.slider__label:nth-child(2)> :checked) :is(.slider__text, .slider__image){
 	transform: translateX(-100%);
 }
-:has(.slider__button:nth-child(3):checked) :is(.slider__text, .slider__image){
-	/* background-color: green; */
+:has(.slider__label:nth-child(3)> :checked) :is(.slider__text, .slider__image){
 	transform: translateX(-200%);
 }
-:has(.slider__button:nth-child(4):checked) :is(.slider__text, .slider__image){
-	/* background-color: blue; */
+:has(.slider__label:nth-child(4)> :checked) :is(.slider__text, .slider__image){
 	transform: translateX(-300%);
 }
 /* media */
