@@ -4,8 +4,39 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Meme slider</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+	<div class="slider">
+		<div class="slider__body">
+			<div class="slider__image-wrapper">
+				<img src="./img/meme1.png" alt="" class="slider__image">
+				<img src="./img/meme2.png" alt="" class="slider__image">
+				<img src="./img/javascript is weird.png" alt="" class="slider__image">
+				<img src="./img/I don’t trust people who code in light mode.png" alt="" class="slider__image">
+			</div>
+			<div class="slider__controls">
+				<label class="slider__label" for="button1">
+					<input class="slider__button" id="button1"  type="radio" name="pages" checked>
+				</label>
+				<label class="slider__label" for="button2">
+					<input class="slider__button" id="button2" type="radio" name="pages" >
+				</label>
+				<label class="slider__label" for="button3">
+					<input class="slider__button" id="button3" type="radio" name="pages" >
+				</label>
+				<label class="slider__label" for="button4">
+					<input class="slider__button" id="button4" type="radio" name="pages" >
+				</label>
+			</div>
+			<div class="slider__text-wrapper">
+				<p class="slider__text">Programming in a nutshell</p>
+				<p class="slider__text">That's one way of understanding empty values</p>
+				<p class="slider__text">What?!</p>
+				<p class="slider__text">Dark mode is superior. Period.</p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
