@@ -17,6 +17,7 @@ body{
 	overflow: hidden;
 	/* background: ; */
 	font-family: sans-serif;
+	padding:2rem;
 }
 .slider {
 	max-width: 73.5rem;
@@ -39,7 +40,6 @@ body{
 }
 
 .slider__image-wrapper{
-	position: relative;
 	display: flex;
 	overflow-x: hidden;
 	grid-area: image;
@@ -51,9 +51,9 @@ body{
 	background: var(--text-color);
 	object-fit: contain;
 	object-position: center;
+	transition: transform var(--transition200);
 }
 .slider__text-wrapper{
-	position: relative;
 	grid-area: text;
 	display: flex;
 	font-size: 1.35rem;
@@ -61,6 +61,7 @@ body{
 }
 .slider__text {
 	min-width: 100%;
+	transition: transform var(--transition200);
 }
 
 .slider__controls {
@@ -95,11 +96,25 @@ body{
 	background-color:var(--bg-color);
 	/* outline-color:var(--active-color); */
 }
-.slider__button:nth-child(1):checked{
-
+/* .slider__image */
+:has(.slider__button:nth-child(1):checked) :is(.slider__text,.slider__image){
+	/* background-color:yellow; */
+	transform: translateX(0);
+}
+:has(.slider__button:nth-child(2):checked) :is(.slider__text, .slider__image){
+	/* background-color: red; */
+	transform: translateX(-100%);
+}
+:has(.slider__button:nth-child(3):checked) :is(.slider__text, .slider__image){
+	/* background-color: green; */
+	transform: translateX(-200%);
+}
+:has(.slider__button:nth-child(4):checked) :is(.slider__text, .slider__image){
+	/* background-color: blue; */
+	transform: translateX(-300%);
 }
 /* media */
-@media (max-width:426px) {
+@media (max-width:501px) {
 	.slider {
 			width: 32rem;
 			height: 26.5rem;
